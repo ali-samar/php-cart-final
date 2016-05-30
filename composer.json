@@ -1,8 +1,5 @@
 {
     "name": "loko/php-kart",
-    "require-dev": {
-        "phpunit/phpunit": "^5.3"
-    },
     "authors": [
         {
             "name": "Amine El Ghayate",
