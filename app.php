@@ -18,7 +18,9 @@ $app['debug'] = true;
 $app->get('/', 'App\\Controllers\\HomeController::getIndex'); 
 $app->get('/logout', 'App\\Controllers\\HomeController::getLogout'); 
 $app->get('/cart', 'App\\Controllers\\CartController::getIndex'); 
-$app->post('/cart/add', 'App\\Controllers\\CartController::postAdd'); 
+$app->post('/cart/add', 'App\\Controllers\\CartController::postAdd');
+$app->get('/cart/checkout', 'App\\Controllers\\CartController::getCheck'); 
+$app->get('/cart/valid', 'App\\Controllers\\CartController::saveUser'); 
 
 
 $app->run(); 
