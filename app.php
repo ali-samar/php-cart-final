@@ -15,12 +15,14 @@ $app['debug'] = true;
 	Nos routes !
 	doc silex : http://silex.sensiolabs.org/doc/master/usage.html#controllers-as-classes
  */
-$app->get('/', 'App\\Controllers\\HomeController::getIndex'); 
+$app->get('/', 'App\\Controllers\\HomeController::getIndex');  
 $app->get('/logout', 'App\\Controllers\\HomeController::getLogout'); 
 $app->get('/cart', 'App\\Controllers\\CartController::getIndex'); 
 $app->post('/cart/add', 'App\\Controllers\\CartController::postAdd');
 $app->get('/cart/checkout', 'App\\Controllers\\CartController::getCheck'); 
-$app->get('/cart/valid', 'App\\Controllers\\CartController::saveUser'); 
+$app->post('/cart/valid', 'App\\Controllers\\CustomerController::postUser');  
+$app->post('/cart/confirmation', 'App\\Controllers\\OrderController::postOrder');  
+$app->post('/cart/confirmation', 'App\\Controllers\\OrderController::destroySession'); 
 
 
 $app->run(); 

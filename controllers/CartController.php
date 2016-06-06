@@ -4,12 +4,11 @@ use App\Controllers\Controller;
 use Silex\Application;
 use Symfony\Component\HttpFoundation\Request;
 use App\Models\Product;
-use App\Models\Customer;
 use Cart;
 class CartController extends Controller {
 
 	public function getIndex(Request $request, Application $app){
-		return view('cart/index', ['products' => Cart::get()]);
+		return view('cart/index', ['cart' => Cart::get()]);
 	}	
 
 	public function postAdd(Request $request, Application $app){
@@ -21,18 +20,6 @@ class CartController extends Controller {
 	}	
 
 	public function getCheck(Request $request, Application $app){
-		return view('cart/check', ['products' => Cart::get()]);
+		return view('cart/check', ['cart' => Cart::get()]);
 	}
-
-	public function saveUser(Application $app){
-		// $user = new Customer;
-		// $user->first_name = Customer::find($_POST['first_name']);
-		// $user->save();
-		if(isset($_SESSION['cart'])){
-			unset($_SESSION['cart']);
-			session_destroy();
-		}
-		return view('cart/valid', []);
-	}
-
 }

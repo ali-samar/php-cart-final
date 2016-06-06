@@ -15,12 +15,12 @@
     					<th class="right aligned">Price</th>
     				</tr>
   				</thead>
-  				<?php foreach($products as $product) : ?>
+  				<?php foreach($cart as $c) : ?>
 					<tbody>
 		    			<tr>
-						    <td><?=$product->name?></td>
-						    <td><img src="<?=$product->picture?>" width="30px" height="30px"></td>
-						    <td class="right aligned"><?=$product->price?> &euro;</td>
+						    <td><?=$c->name?></td>
+						    <td><img src="<?=$c->picture?>" width="30px" height="30px"></td>
+						    <td class="right aligned"><?=$c->price?> &euro;</td>
 						</tr>
 		  			</tbody>
 				<?php endforeach; ?>
